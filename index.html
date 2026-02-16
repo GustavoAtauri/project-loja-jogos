@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Up Games | Assistência Técnica & PC Gamer</title>
+    <link rel="stylesheet" href="css/estilo..css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Up<span>Games</span></div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#services">Assistência</a></li>
+                    <li><a href="#shop">Loja & Upgrades</a></li>
+                    <li><a href="#process">Como Funciona</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#footer" class="highlight">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Reviva seu Equipamento ou <br>
+                    <span class="highlight-sec">Construa uma Lenda.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    O Hub definitivo para quem precisa de reparo técnico especializado urgente ou quer o setup dos sonhos. Confiança de laboratório, alma de gamer.
+                </p>
+                <div class="hero-cta-group">
+                    <button class="btn btn-primary" onclick="scrollToSection('contact')">🔧 Solicitar Reparo Agora</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('shop')">🎮 Ver Ofertas e Upgrades</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="authority">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>+5.000</h3>
+                    <p>Máquinas Recuperadas</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Certificados</h3>
+                    <p>Técnicos Especialistas</p>
+                </div>
+                <div class="stat-item">
+                    <h3>90 Dias</h3>
+                    <p>Garantia Estendida</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Lab Próprio</h3>
+                    <p>Tecnologia de Ponta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">O Hospital do <span class="highlight">Hardware</span></h2>
+            <span class="section-subtitle">Seu equipamento quebrado tem solução. Recuperamos o que parecia perdido.</span>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon-box">💻</div>
+                    <h3>Notebooks e PCs</h3>
+                    <p>Seu computador está lento, tela azul ou não liga? Fazemos formatação, troca de tela, reparo de placa-mãe e limpeza avançada.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box">🎮</div>
+                    <h3>Consoles Next-Gen</h3>
+                    <p>Especialistas em PS5, Xbox Series e Nintendo Switch. Resolvemos superaquecimento, erro de leitura e HDMI quebrado.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box">🕹️</div>
+                    <h3>Periféricos</h3>
+                    <p>Drift no controle? Teclado mecânico falhando? Trazemos seus acessórios de volta ao jogo com precisão original.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">O Arsenal do <span class="highlight-sec">Gamer</span></h2>
+            <span class="section-subtitle">Não vendemos apenas peças. Vendemos performance com garantia de compatibilidade.</span>
+            
+            <div class="services-grid">
+                <div class="service-card shop-card">
+                    <div class="icon-box shop-icon">🚀</div>
+                    <h3>PC Gamer Custom</h3>
+                    <p>Consultoria completa para montar sua máquina. Você diz o orçamento e os jogos, nós montamos o monstro ideal.</p>
+                    <br><a href="#" class="highlight-sec">Simular Setup ></a>
+                </div>
+                <div class="service-card shop-card">
+                    <div class="icon-box shop-icon">⚡</div>
+                    <h3>Upgrades Inteligentes</h3>
+                    <p>SSD, Memória RAM e Placas de Vídeo. Dê uma sobrevida ao seu PC antigo gastando apenas o necessário.</p>
+                    <br><a href="#" class="highlight-sec">Ver Peças ></a>
+                </div>
+                <div class="service-card shop-card">
+                    <div class="icon-box shop-icon">🎧</div>
+                    <h3>Acessórios Pro</h3>
+                    <p>Headsets, Mouses e Teclados das melhores marcas. Teste a ergonomia na loja antes de levar.</p>
+                    <br><a href="#" class="highlight-sec">Ver Catálogo ></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="section-padding" style="background: var(--bg-card);">
+        <div class="container">
+            <h2 class="section-title">Transparência Total</h2>
+            <span class="section-subtitle">Sem surpresas na conta. Você acompanha cada etapa.</span>
+            
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>Diagnóstico</h4>
+                    <p>Análise detalhada do problema em até 24h.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>Orçamento</h4>
+                    <p>Envio do valor via WhatsApp. Você aprova ou reprova.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>Reparo / Montagem</h4>
+                    <p>Execução técnica com rigoroso controle de qualidade.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h4>Entrega</h4>
+                    <p>Retire na loja ou receba em casa com garantia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Quem Conhece, Recomenda</h2>
+            <div class="testimonials-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Achei que meu notebook de trabalho tinha morrido. O pessoal recuperou meus dados e trocou a tela em 2 dias. Salvaram minha semana!"</p>
+                    <div class="client-name">- Carlos M., Arquiteto</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Montei meu primeiro PC Gamer aqui. A consultoria foi top, não tentaram me empurrar a peça mais cara, mas sim a que eu precisava."</p>
+                    <div class="client-name">- Felipe "Pipo", Gamer</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Levei meu PS5 que estava desligando sozinho. Limpeza completa e troca da pasta térmica resolveram. Ficou silencioso como novo."</p>
+                    <div class="client-name">- Juliana R.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">Dúvidas Frequentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Quanto custa o orçamento? <span>+</span></div>
+                <div class="faq-answer">Nosso orçamento de balcão é totalmente gratuito! Você só paga se aprovar o serviço.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Qual o tempo de garantia? <span>+</span></div>
+                <div class="faq-answer">Oferecemos 90 dias de garantia legal para todos os serviços, e garantias estendidas de até 1 ano para peças novas.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Vocês buscam o computador em casa? <span>+</span></div>
+                <div class="faq-answer">Sim! Temos serviço de leva-e-traz para toda a região. Consulte a taxa de deslocamento pelo WhatsApp.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Aceitam quais formas de pagamento? <span>+</span></div>
+                <div class="faq-answer">Aceitamos PIX, Dinheiro e parcelamos em até 12x no Cartão de Crédito.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">Up <span>Games</span></div>
+                    <p>A união perfeita entre laboratório técnico avançado e loja gamer especializada.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p>📞 (XX) 99999-9999</p>
+                    <p>📧 contato@sualoja.com.br</p>
+                    <p>📍 Rua Exemplo, 123 - Centro, Cidade/UF</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Horário</h4>
+                    <p>Seg - Sex: 09:00 - 18:00</p>
+                    <p>Sáb: 09:00 - 13:00</p>
+                    <p><span style="color:var(--success)">● Aberto Agora</span></p>
+                </div>
+            </div>
+            <div class="text-center" style="border-top: 1px solid #333; padding-top: 20px; font-size: 0.8rem; color: #666;">
+                &copy; 2024 [Nome da Loja]. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/seunumerodewhatsapp" class="whatsapp-float" target="_blank">
+        📱
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
