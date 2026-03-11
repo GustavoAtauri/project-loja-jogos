@@ -3,229 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Up Games | Assistência Técnica & PC Gamer</title>
-    <link rel="stylesheet" href="css/estilo..css">
+    <title>Nexus Games | A Loja do Gamer</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 
-    <header>
+    <header id="navbar">
         <div class="container nav-container">
-            <div class="logo">Up<span>Games</span></div>
-            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-            <nav>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#services">Assistência</a></li>
-                    <li><a href="#shop">Loja & Upgrades</a></li>
-                    <li><a href="#process">Como Funciona</a></li>
-                    <li><a href="#testimonials">Depoimentos</a></li>
-                    <li><a href="#footer" class="highlight">Contato</a></li>
-                </ul>
-            </nav>
+            <a href="#" class="logo">NEXUS<span>GAMES</span></a>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Buscar jogos...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav-actions">
+                <div class="cart-icon" id="cart-icon-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
+                <div class="user-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Reviva seu Equipamento ou <br>
-                    <span class="highlight-sec">Construa uma Lenda.</span>
-                </h1>
-                <p class="hero-subtitle">
-                    O Hub definitivo para quem precisa de reparo técnico especializado urgente ou quer o setup dos sonhos. Confiança de laboratório, alma de gamer.
-                </p>
-                <div class="hero-cta-group">
-                    <button class="btn btn-primary" onclick="scrollToSection('contact')">🔧 Solicitar Reparo Agora</button>
-                    <button class="btn btn-secondary" onclick="scrollToSection('shop')">🎮 Ver Ofertas e Upgrades</button>
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <span class="badge">Lançamento Exclusivo</span>
+                <h1>CYBER <span class="text-orange">REVOLUTION</span> 2077</h1>
+                <p>Prepare-se para a experiência RPG mais imersiva da década. Gráficos ultrarrealistas e um mundo aberto sem limites.</p>
+                <div class="hero-prices">
+                    <span class="old-price">R$ 349,90</span>
+                    <span class="new-price">R$ 249,90</span>
+                </div>
+                <button class="btn btn-glow"><i class="fas fa-gamepad"></i> Comprar Agora</button>
+            </div>
+        </section>
+
+        <section class="catalog container reveal">
+            <div class="section-header">
+                <h2>Jogos em <span class="text-orange">Destaque</span></h2>
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="rpg">RPG</button>
+                    <button class="filter-btn" data-filter="fps">Ação/FPS</button>
+                    <button class="filter-btn" data-filter="race">Corrida</button>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="authority">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>+5.000</h3>
-                    <p>Máquinas Recuperadas</p>
-                </div>
-                <div class="stat-item">
-                    <h3>Certificados</h3>
-                    <p>Técnicos Especialistas</p>
-                </div>
-                <div class="stat-item">
-                    <h3>90 Dias</h3>
-                    <p>Garantia Estendida</p>
-                </div>
-                <div class="stat-item">
-                    <h3>Lab Próprio</h3>
-                    <p>Tecnologia de Ponta</p>
-                </div>
+            <div class="games-grid" id="games-grid"></div>
+        </section>
+    </main>
+
+    <div class="product-modal" id="product-modal">
+        <div class="modal-content glass">
+            <button class="close-modal" id="close-modal"><i class="fas fa-times"></i></button>
+            <div class="modal-grid" id="modal-body"></div>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Seu <span class="text-orange">Carrinho</span></h2>
+            <button id="close-cart" class="close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items-container" id="cart-items-container">
+            <p class="empty-cart-msg">Seu carrinho está vazio.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">R$ 0,00</span>
             </div>
+            <button class="btn btn-glow" id="checkout-btn" style="width: 100%;">Finalizar Compra</button>
         </div>
-    </section>
+    </div>
 
-    <section id="services" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">O Hospital do <span class="highlight">Hardware</span></h2>
-            <span class="section-subtitle">Seu equipamento quebrado tem solução. Recuperamos o que parecia perdido.</span>
+    <div class="product-modal" id="checkout-modal">
+        <div class="modal-content glass checkout-content">
+            <button class="close-modal" id="close-checkout"><i class="fas fa-times"></i></button>
+            <h2 style="font-family: var(--font-heading); margin-bottom: 20px;">Finalizar <span class="text-orange">Pedido</span></h2>
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="icon-box">💻</div>
-                    <h3>Notebooks e PCs</h3>
-                    <p>Seu computador está lento, tela azul ou não liga? Fazemos formatação, troca de tela, reparo de placa-mãe e limpeza avançada.</p>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label>Email para entrega do jogo digital</label>
+                    <input type="email" required placeholder="exemplo@email.com" class="form-input">
                 </div>
-                <div class="service-card">
-                    <div class="icon-box">🎮</div>
-                    <h3>Consoles Next-Gen</h3>
-                    <p>Especialistas em PS5, Xbox Series e Nintendo Switch. Resolvemos superaquecimento, erro de leitura e HDMI quebrado.</p>
+                <div class="form-group">
+                    <label>Endereço de Cobrança (Opcional para digital)</label>
+                    <input type="text" placeholder="Rua, Número, Bairro, Cidade - UF" class="form-input">
                 </div>
-                <div class="service-card">
-                    <div class="icon-box">🕹️</div>
-                    <h3>Periféricos</h3>
-                    <p>Drift no controle? Teclado mecânico falhando? Trazemos seus acessórios de volta ao jogo com precisão original.</p>
+                
+                <h3 style="margin: 20px 0 10px; color: var(--primary-orange);">Método de Pagamento</h3>
+                <div class="payment-methods">
+                    <label class="pay-option"><input type="radio" name="payment" value="pix" checked> PIX</label>
+                    <label class="pay-option"><input type="radio" name="payment" value="credit"> Cartão de Crédito</label>
+                    <label class="pay-option"><input type="radio" name="payment" value="debit"> Cartão Débito</label>
                 </div>
-            </div>
+
+                <div id="payment-details" class="payment-details">
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">Escaneie o QR Code ou use o Pix Copia e Cola. O jogo é liberado na hora!</p>
+                    <div style="background: white; width: 150px; height: 150px; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; color: black; font-weight: bold; border-radius: 10px;">[QR CODE AQUI]</div>
+                    <input type="text" value="00020126580014BR.GOV.BCB.PIX..." readonly class="form-input text-center">
+                </div>
+
+                <div class="checkout-summary">
+                    <span>Total a Pagar:</span>
+                    <strong id="checkout-final-total" class="text-orange" style="font-size: 1.5rem;">R$ 0,00</strong>
+                </div>
+                
+                <button type="submit" class="btn btn-glow" style="width: 100%; margin-top: 20px;">Confirmar Pagamento</button>
+            </form>
         </div>
-    </section>
+    </div>
 
-    <section id="shop" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">O Arsenal do <span class="highlight-sec">Gamer</span></h2>
-            <span class="section-subtitle">Não vendemos apenas peças. Vendemos performance com garantia de compatibilidade.</span>
-            
-            <div class="services-grid">
-                <div class="service-card shop-card">
-                    <div class="icon-box shop-icon">🚀</div>
-                    <h3>PC Gamer Custom</h3>
-                    <p>Consultoria completa para montar sua máquina. Você diz o orçamento e os jogos, nós montamos o monstro ideal.</p>
-                    <br><a href="#" class="highlight-sec">Simular Setup ></a>
-                </div>
-                <div class="service-card shop-card">
-                    <div class="icon-box shop-icon">⚡</div>
-                    <h3>Upgrades Inteligentes</h3>
-                    <p>SSD, Memória RAM e Placas de Vídeo. Dê uma sobrevida ao seu PC antigo gastando apenas o necessário.</p>
-                    <br><a href="#" class="highlight-sec">Ver Peças ></a>
-                </div>
-                <div class="service-card shop-card">
-                    <div class="icon-box shop-icon">🎧</div>
-                    <h3>Acessórios Pro</h3>
-                    <p>Headsets, Mouses e Teclados das melhores marcas. Teste a ergonomia na loja antes de levar.</p>
-                    <br><a href="#" class="highlight-sec">Ver Catálogo ></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="process" class="section-padding" style="background: var(--bg-card);">
-        <div class="container">
-            <h2 class="section-title">Transparência Total</h2>
-            <span class="section-subtitle">Sem surpresas na conta. Você acompanha cada etapa.</span>
-            
-            <div class="steps-container">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <h4>Diagnóstico</h4>
-                    <p>Análise detalhada do problema em até 24h.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <h4>Orçamento</h4>
-                    <p>Envio do valor via WhatsApp. Você aprova ou reprova.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <h4>Reparo / Montagem</h4>
-                    <p>Execução técnica com rigoroso controle de qualidade.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <h4>Entrega</h4>
-                    <p>Retire na loja ou receba em casa com garantia.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Quem Conhece, Recomenda</h2>
-            <div class="testimonials-grid">
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Achei que meu notebook de trabalho tinha morrido. O pessoal recuperou meus dados e trocou a tela em 2 dias. Salvaram minha semana!"</p>
-                    <div class="client-name">- Carlos M., Arquiteto</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Montei meu primeiro PC Gamer aqui. A consultoria foi top, não tentaram me empurrar a peça mais cara, mas sim a que eu precisava."</p>
-                    <div class="client-name">- Felipe "Pipo", Gamer</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Levei meu PS5 que estava desligando sozinho. Limpeza completa e troca da pasta térmica resolveram. Ficou silencioso como novo."</p>
-                    <div class="client-name">- Juliana R.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="section-padding">
-        <div class="container" style="max-width: 800px;">
-            <h2 class="section-title">Dúvidas Frequentes</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">Quanto custa o orçamento? <span>+</span></div>
-                <div class="faq-answer">Nosso orçamento de balcão é totalmente gratuito! Você só paga se aprovar o serviço.</div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">Qual o tempo de garantia? <span>+</span></div>
-                <div class="faq-answer">Oferecemos 90 dias de garantia legal para todos os serviços, e garantias estendidas de até 1 ano para peças novas.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">Vocês buscam o computador em casa? <span>+</span></div>
-                <div class="faq-answer">Sim! Temos serviço de leva-e-traz para toda a região. Consulte a taxa de deslocamento pelo WhatsApp.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">Aceitam quais formas de pagamento? <span>+</span></div>
-                <div class="faq-answer">Aceitamos PIX, Dinheiro e parcelamos em até 12x no Cartão de Crédito.</div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 20px;">Up <span>Games</span></div>
-                    <p>A união perfeita entre laboratório técnico avançado e loja gamer especializada.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Contato</h4>
-                    <p>📞 (XX) 99999-9999</p>
-                    <p>📧 contato@sualoja.com.br</p>
-                    <p>📍 Rua Exemplo, 123 - Centro, Cidade/UF</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Horário</h4>
-                    <p>Seg - Sex: 09:00 - 18:00</p>
-                    <p>Sáb: 09:00 - 13:00</p>
-                    <p><span style="color:var(--success)">● Aberto Agora</span></p>
-                </div>
-            </div>
-            <div class="text-center" style="border-top: 1px solid #333; padding-top: 20px; font-size: 0.8rem; color: #666;">
-                &copy; 2024 [Nome da Loja]. Todos os direitos reservados.
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <a href="#" class="logo">NEXUS<span>GAMES</span></a>
+                <p>A plataforma definitiva para gamers hardcores. Os melhores preços e entrega digital imediata.</p>
             </div>
         </div>
     </footer>
-
-    <a href="https://wa.me/seunumerodewhatsapp" class="whatsapp-float" target="_blank">
-        📱
-    </a>
 
     <script src="script.js"></script>
 </body>
